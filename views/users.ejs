@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Listado usuarios</title>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <header>
+      <% include navbar.ejs %>
+    </header>
+    <main>   
+      <div class="container">
+        <div class="row">
+          <div class="col-12 d-flex justify-content-between">
+            <h1 class="text-dark">Listado Clientes</h1>
+            <a class="btn btn-dark my-auto" href="/users/newuser" >+</a>
+          </div>
+          <div class="col-12 bg-white">
+            <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Modelo</th>
+                <th scope="col">Color</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <%datalist.forEach(function(user){%>
+              <tr>
+                <th scope="row"><%= user.user_id%></th>
+                <td><%= user.name%></td>
+                <td><%= user.last_name%></td>
+                <td><%= user.model%></td>
+                <td><%= user.color%></td>
+                <td>
+                  <a class="btn btn-dark" href="/users/profile/<%= user.user_id%>">View</a>
+                  <a class="btn btn-dark" href="/users/edituser/<%= user.user_id%>">Edit</a>
+                  <a class="btn btn-dark" href="/users/delete/<%= user.user_id%>">Delete</a>
+                </td>
+              </tr>
+              <%})%>
+            </tbody>
+            </table>
+          </div>   
+        </div>
+      </div>
+  </main>
+  </body>
+</html>

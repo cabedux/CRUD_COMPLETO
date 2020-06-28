@@ -1,0 +1,30 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: black;
+}
+
+a {
+  color: #00B7FF;
+}
+main .container {
+  padding-top:50px;
+}
+
+main .inicial{
+  background-image: url('../images/mobile.jpg');
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  height: calc(100vh - 66px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center;
+  color: white;
+}
+.inicial h1{
+  font-size:5rem;
+}
+.inicial p{
+  font-size:1rem;
+}

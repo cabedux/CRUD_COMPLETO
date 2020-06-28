@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New user</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+  </head>
+  <body>
+    <header>
+      <% include navbar.ejs %>
+      </header>
+      <main>
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                      <h1 class="text-center text-dark">Datos Cliente</h1>
+                      <form action="/users/update/<%- userData.user_id %>" method="post">
+      
+                          <fieldset class="border border-dark p-3 mb-3">
+                              <legend class="w-auto px-2">Usuario</legend>
+                              <div class="form-group col-12">
+                                  <label for="inputName">Nombre</label>
+                                  <input type="text" class="form-control" id="inputName" placeholder="Nombre" name="name" value="<%- userData.name %>">
+                              </div>
+                              <div class="form-group col-12">
+                                  <label for="inputLastName">Apellidos</label>
+                                  <input type="text" class="form-control" id="inputLastName" placeholder="Apellidos" name="last_name" value="<%- userData.last_name %>">
+                              </div>     
+                          </fieldset>
+      
+                          <fieldset class="border border-dark p-3">
+                              <legend class="w-auto px-2">Phone</legend>               
+                              <div class="form-group col-12">
+                                  <label for="inputModel">Marca/Modelo de movil</label>
+                                  <input type="text" class="form-control" id="inputModel" placeholder="Marca/modelo del movil" name="model" value="<%- userData.model %>">
+                              </div>
+                              <div class="form-group col-12">
+                                  <label for="inputColor">Color</label>
+                                  <input type="text" class="form-control" id="inputColor" placeholder="Color del movil" name="color" value="<%- userData.color %>">
+                              </div>                        
+                          </fieldset>
+                          <div class="d-flex justify-content-center align-items-center m-5">
+                              <button type="submit" class="btn btn-dark ">Actualizar datos</button>
+                          </div>
+                          
+                        </form>
+                  </div>
+              </div>
+          </div>
+      </main>
+  </body>
+</html>
